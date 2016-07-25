@@ -74,5 +74,5 @@ def graph():
     return render_template('graph.html', div=div, subtitle=street) #, script=script
 
 if __name__ == '__main__':
-    #app.run(port=33507, debug=True)
     app.run(host='0.0.0.0') # The operating system listens on all public IPs.
+    #app.run(port=33507, debug=True)
