@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from geopy import geocoders
 
 import dill
-dill.settings["recurse"] = True
+#dill.settings["recurse"] = True
 
 import requests
 from bokeh.plotting import figure
