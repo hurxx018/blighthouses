@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.0.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.0.min.js"></script>
+    {{ script | safe }}
+  </head>
+  <body>
+    <div class='bokeh'>
+      <h1> Blightedness of House in Detroit <br>
+      </h1>
+      <h2>
+        Address : {{subtitle}}, Detroit, MI <br>
+        Blighted : {{ div }}
+    </h2>
+    <h3> <a href="/index">Back<a/> </h3>
+    </div>
+  </body>
+</html>

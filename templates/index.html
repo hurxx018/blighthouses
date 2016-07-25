@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Detection of Blighted Houses : Develop a classification model detecting blighted houses.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="static/stylesheets/stylesheet.css">
+
+    <title>Detection of Blighted Houses</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- <a id="forkme_banner" href="https://github.com/hurxx018/TheDataIncubator_KH">View on GitHub</a> -->
+
+          <h1 id="project_title">Detection of Blighted Houses</h1>
+          <h2 id="project_tagline">Develop a classification model detecting blighted houses.</h2>
+
+            <!-- <section id="downloads"> -->
+            <!--  <a class="zip_download_link" href="https://github.com/hurxx018/TheDataIncubator_KH/zipball/master">Download this project as a .zip file</a> -->
+            <!--  <a class="tar_download_link" href="https://github.com/hurxx018/TheDataIncubator_KH/tarball/master">Download this project as a tar.gz file</a> -->
+          <!-- </section> -->
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      <!--<a  <h1>
+ id="detection-of-blighted-houses-in-detroit" class="anchor" href="#detection-of-blighted-houses-in-detroit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Detection of Blighted Houses in Detroit</h1> --->
+
+<h2>By Kwang Ho Hur at The Data Incubator</h2><br>
+
+<h2>
+<a id="issue-and-motivation" class="anchor" href="#issue-and-motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issue and Motivation</h2>
+
+<p>
+Blighted houses or buildings are problematic in a lot of cities because of </p>
+<ul>
+<li>Threat to public safety</li>
+<li>More blighted houses can be created in the neighborhood. </li>
+<li>Concern for real estate value</li>
+</ul>
+<p>
+The detection of blighted houses is important because of </p>
+<ul>
+<li>Useful information for insurance companies </li>
+<li>New opportunity for real estate developers </li>
+</ul>
+
+<h4>
+<a id="bligthed-house" class="anchor" href="#blighted-house" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">
+</span></a>Blighted House in Detroit</h4>
+<img src="static/images/Blighted_House.png" alt="hi" style="width:340px;height:260px;" class="inline">
+<ul>(Figure 1) An example of Blighted House </ul> <br>
+
+<li>This issue has been much more serious in Detroit because of the enormous decline of its population during the last 60 years.
+In the city, lots of houses have been abandoned.
+This enables me to build a classification model where the number of blighted houses is high enough to be detectable.
+</li>
+</ul>
+
+<h4>
+<a id="population" class="anchor" href="#population" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">
+</span></a>Population of Detroit and USA </h4>
+<img src="static/images/Detroit_USA_population.png" alt="hi" style="width:410px;height:300px;" class="inline">
+
+<ul>(Figure 2) Population of Detroit from 1930 to 2010 (blue) and Population of USA (red) </ul><br>
+
+<h2>
+<a id="solution" class="anchor" href="#solution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Solution</h2>
+
+<ol>
+<li>Build a classification model which can identify blighted houses in the city.</li>
+<li>Evaluate the accuracy of the model </li>
+<li>Develop a method employing images to improve the model</li>
+</ol>
+
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data</h2>
+
+<ul>
+<li>Phase 1
+Using public data from Detroit
+
+<ul>
+<li>Demolition Permits</li>
+<li>Blight Violation Tickets</li>
+<li>Crimes</li>
+<li>311 Calls</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="blighted_houses_map" class="anchor" href="#blighted_houses_map" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">
+</span></a>Distribution of Blighted Houses in Detroit </h2>
+<iframe width="100%" height="480" frameborder="0" src="https://hurxx018.carto.com/viz/c2ab13ae-3346-11e6-8e55-0ea31932ec1d/embed_map"
+   allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<ul>(Figure 3) Blighted houses are distributed in a whole region of Detroit (drawn in CARTO) </ul>
+
+<h2>
+<a id="classification_model" class="anchor" href="#classification_model" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classification Model</h2>
+<ul>- K-Nearest Neighboring Classification model was built with features of Latitude, Longitude
+, the number of blight violation tickets, the number of crimes, and the number of 311 calls.
+The parameter k of the best model is 6.</ul>
+
+<div class=metanav>
+<h4>
+<a id="classification_model" class="anchor" href="#classification_model" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Predictor of the model</h4>
+<form id='input' method='post' action='index'>
+<p>
+  Street:
+  <input type="text" name="street"> <br>
+  City  :
+  <input type="text" name="city" value="Detroit"> <br>
+  State :
+  <input type="text" name="state" value="MI"> <br>
+<!--  Latitude (42.253 ~ 42.447): <br>
+  <input type="number" name="latitude" min="42.253976" max="42.44757" step="0.000001" value="42.300000"> <br>
+  Longitude (-83.287 ~ -82.912): <br>
+  <input type="number" name="longitude" min="-83.287378" max="-82.91144" step="0.000001" value="-83.000000"> <br> -->
+  Number of Blight Violation Tickets (0~100):
+  <input type="number" name="numberofblightviolationtickets" min="0" max="100" step="1" value="0"> <br>
+  Number of Crimes (0~100):
+  <input type="number" name="numberofcrimes" min="0" max="100" step="1" value="0"> <br>
+  Number of 311 calls (0~100):
+  <input type="number" name="numberof311calls" min="0" max="100" step="1" value="0"> <br><br>
+  <input type="submit" value="Submit"> <br>
+</p>
+</form>
+</div>
+
+<div class="row">
+    <div class='col-lg-6'>
+      <h2>About me</h2>
+      <p>My name is Kwang Ho Hur. I received my Ph.D. at University of Minnesota in Physics.
+        For my dissertation, I developed theories to analyze photon count data in fluorescence fluctuation spectroscopy.
+        The results were applied to the quantitative study of protein interactions in living cells.
+        At University of Minnesota, I also taught introductory courses of physics to students.
+      </p><p>
+        I like to quantify data, extract insights, add values, and communicate those to other people.
+        I am excited about applying my diverse experience and skills in industry to solve problems that directly add value for people.</p>
+    </div>
+    <div class='col-lg-3'>
+      <img src="static/images/kwanghohur.jpg" alt="hi" style="width:260px;height:300px;" class="inline">
+    </div>
+</div>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Detection of Blighted Houses maintained by <a href="https://github.com/hurxx018">Kwang Ho Hur</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a> and <a href="https://www.heroku.com/home">Heroku</a></p>
+      </footer>
+    </div>
+
+
+
+  </body>
+</html>
