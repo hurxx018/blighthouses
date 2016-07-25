@@ -1,4 +1,4 @@
-# Detection of Blighted Houses in Detroit
+# Detection of Blighted Houses
 By Kwang Ho Hur
 
 ## Issue and Motivation
@@ -6,7 +6,7 @@ By Kwang Ho Hur
 	- Threat to public safety
 	- More blighted houses can be created in the neighborhood. 
 	- Concern for real estate
-* This issue has been much more serious in Detroit because of the enormous decline of its population during the last 60 years. In the city, lots of houses have been abandoned. This enables me to build a classification model where the number of blighted houses is high enough to be detectable. Otherwise, we need develop an anomaly detection model. 
+* This issue has been much more serious in Detroit because of the enormous decline of its population during the last 60 years. In the city, lots of houses have been abandoned. This enables me to build a classification model where the number of blighted houses is high enough to be detectable. 
 
 ## Solution
 1. Build a classification model which can identify blighted houses in the city.
